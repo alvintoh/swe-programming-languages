@@ -24,7 +24,7 @@ enum Role {
   AUTHOR = "AUTHOR",
 }
 
-const person = {
+const obsPerson = {
   name: "Maximilian",
   age: 30,
   hobbies: ["Sports", "Cooking"],
@@ -39,13 +39,13 @@ const person = {
 let favoriteActivities: string[];
 favoriteActivities = ["Sports"];
 
-console.log(person.name);
+console.log(obsPerson.name);
 
-for (const hobby of person.hobbies) {
+for (const hobby of obsPerson.hobbies) {
   console.log(hobby.toUpperCase());
   // console.log(hobby.map()); // !!! ERROR !!!
 }
 
-if (person.role === Role.ADMIN) {
+if (obsPerson.role === Role.ADMIN) {
   console.log("is admin");
 }

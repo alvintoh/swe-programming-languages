@@ -1,12 +1,13 @@
-var userInput;
-var userName;
+"use strict";
+let userInput;
+let functionTypesUserName;
 userInput = 5;
 userInput = "Max";
 if (typeof userInput === "string") {
-    userName = userInput;
+    functionTypesUserName = userInput;
 }
 function generateError(message, code) {
     throw { message: message, errorCode: code };
-    // while (true) {}
 }
 generateError("An error occurred!", 500);
+//# sourceMappingURL=functions-types.js.map
