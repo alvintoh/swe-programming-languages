@@ -1,80 +1,25 @@
-class Department {
-  // private id: string;
-  // private name: string;
-  protected employees: string[] = [];
+interface Greetable {
+  name: string;
 
-  constructor(private readonly id: string, public name: string) {
-    // this.id = id;
-    // this.name = n;
+  greet(phrase: string): void;
+}
+
+class Person implements Greetable {
+  name: string;
+  age = 30;
+
+  constructor(n: string) {
+    this.name = n;
   }
 
-  describe(this: Department) {
-    console.log(`Department (${this.id}): ${this.name}`);
-  }
-
-  addEmployee(employee: string) {
-    // validation etc
-    this.employees.push(employee);
-  }
-
-  printEmployeeInformation() {
-    console.log(this.employees.length);
-    console.log(this.employees);
+  greet(phrase: string) {
+    console.log(phrase + " " + this.name);
   }
 }
 
-class ITDepartment extends Department {
-  admins: string[];
-  constructor(id: string, admins: string[]) {
-    super(id, "IT");
-    this.admins = admins;
-  }
-}
+let user1: Greetable;
 
-class AccountingDepartment extends Department {
-  constructor(id: string, private reports: string[]) {
-    super(id, "Accounting");
-  }
+user1 = new Person("Max");
 
-  addEmployee(employee: string): void {
-    if (employee === "Max") {
-      return;
-    }
-    this.employees.push(employee);
-  }
-
-  addReport(text: string) {
-    this.reports.push(text);
-  }
-
-  printReports() {
-    console.log(this.reports);
-  }
-}
-
-const it = new ITDepartment("d1", ["Max"]);
-
-it.addEmployee("Max");
-it.addEmployee("Manu");
-
-// it.employees[2] = "Anna";
-
-it.describe();
-it.name = "NEW NAME";
-it.printEmployeeInformation();
-
-console.log(it);
-
-const accounting = new AccountingDepartment("d2", []);
-
-accounting.addReport("Something went wrong...");
-
-accounting.addEmployee("Max");
-accounting.addEmployee("Manu");
-
-accounting.printReports();
-accounting.printEmployeeInformation();
-
-// const accountingCopy = { name: "DUMMY", describe: accounting.describe };
-
-// accounting.describe();
+user1.greet("Hi there - I am");
+console.log(user1);
