@@ -8,7 +8,7 @@
 //   }
 // }
 
-class User {
+class BasicUser {
   #role: string = "admin"; // Private property in vanilla JavaScript
   readonly hobbies: string[] = [];
 
@@ -21,8 +21,8 @@ class User {
   }
 }
 
-const max = new User("Max", 36);
-const fred = new User("Fred", 29);
+const max = new BasicUser("Max", 36);
+const fred = new BasicUser("Fred", 29);
 
 // max.hobbies = []; // This will not work because hobbies is readonly
 max.hobbies.push("Sports"); // This will work because we are modifying the array, not reassigning it
