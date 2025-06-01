@@ -36,9 +36,9 @@ class Person {
   }
 }
 
-// const pers = new Person();
+const pers = new Person();
 
-// console.log(pers);
+console.log(pers);
 
 // ---
 
@@ -139,8 +139,10 @@ const registeredValidators: ValidatorConfig = {};
 
 function Required(target: any, propName: string) {
   registeredValidators[target.constructor.name] = {
+    // preserves existing validators for the class, so the property will not be overwritten but instead appended
     ...registeredValidators[target.constructor.name],
     [propName]: [
+      // add 'required' validator to the property
       ...(registeredValidators[target.constructor.name]?.[propName] ?? []),
       "required",
     ],
