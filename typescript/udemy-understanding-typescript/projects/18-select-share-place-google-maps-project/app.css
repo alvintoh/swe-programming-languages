@@ -3,8 +3,8 @@ html {
 }
 
 #map {
-  height: 90%;
-  width: 20rem;
+  height: 20rem;
+  width: 40rem;
   border: 1px solid #ccc;
   margin: 2rem auto;
   display: flex;
