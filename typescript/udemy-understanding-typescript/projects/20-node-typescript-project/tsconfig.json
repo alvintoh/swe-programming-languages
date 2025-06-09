@@ -6,6 +6,10 @@
     "module": "NodeNext",
     "outDir": "dist",
     "lib": ["es2022", "dom"],
-    "strict": true
+    "strict": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "verbatimModuleSyntax": true,
+    "erasableSyntaxOnly": true
   }
 }

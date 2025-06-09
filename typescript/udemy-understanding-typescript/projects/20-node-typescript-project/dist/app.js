@@ -1,9 +1,9 @@
-import express from "express";
+import express, {} from "express";
+import todoRoutes from "./routes/todo.ts";
 const app = express();
-app.get("/", (req, res) => {
-    console.log("req.method");
-    res.json({
-        message: "Hello Word!",
-    });
+app.use(express.json()); // Middleware to parse JSON bodies
+app.use(todoRoutes);
+app.use((err, req, res, next) => {
+    res.status(500).json({ message: "An error occurred!" });
 });
 app.listen(3000);
